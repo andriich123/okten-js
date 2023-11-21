@@ -1,1 +1,1 @@
-# okten-js
+# JS module | Okten | Andrii Chekanovskyi
