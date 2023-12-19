@@ -1,0 +1,31 @@
+.course {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 2px solid #e0ae80;
+    margin: 10px;
+    padding: 10px;
+}
+
+.course-description {
+    display: flex;
+    gap: 10px;
+    padding: 10px 20px;
+    justify-content: space-between;
+    border: 2px solid #e0ae80;
+}
+
+.modules {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    border: 2px solid #e0ae80;
+
+}
+
+.modules > li{
+    list-style-type: none;
+    padding: 10px;
+    margin: 2px 0;
+    border: 2px solid #e0ae80;
+}
