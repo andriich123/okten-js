@@ -1,0 +1,12 @@
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.product {
+  font-style: italic;
+  font-size: 14px;
+  border: 2px solid rgb(226, 252, 212);
+  margin: 5px 0;
+  padding: 5px 10px;
+}
