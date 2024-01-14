@@ -7,22 +7,17 @@ import { renderPostDetails, renderComments } from "./ui-render.js";
 
 const userId = new URLSearchParams(window.location.search).get("id");
 
-postService
-  .getPostById(userId)
-  .then((post) => {
-    document.title = post.title;
+const init = async () => {
+  const post = await postService.getPostById(userId);
+  document.title = post.title;
 
-    const postDetails = renderPostDetails(post);
+  const postDetails = renderPostDetails(post);
+  document.body.append(postDetails);
 
-    document.body.append(postDetails);
-  })
-  .then(() => {
-    postService.getPostComments(userId).then((comments) => {
-      const commentsContainer = document.querySelector(
-        "#post-content__comments"
-      );
+  const comments = await postService.getPostComments(userId);
+  const commentsContainer = document.querySelector("#post-content__comments");
+  const commentsList = renderComments(comments);
+  commentsContainer.replaceChildren(commentsList);
+};
 
-      const commentsList = renderComments(comments);
-      commentsContainer.replaceChildren(commentsList);
-    });
-  });
+init();

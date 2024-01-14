@@ -16,7 +16,8 @@ const handlePostsBtnClick = async (userId) => {
   postsContainer.replaceChildren(renderUserPosts(posts));
 };
 
-userService.getUserById(userId).then((user) => {
+const init = async () => {
+  const user = await userService.getUserById(userId);
   document.title = user.name;
 
   const userDetails = renderUserDetailsItem(user, () =>
@@ -24,4 +25,6 @@ userService.getUserById(userId).then((user) => {
   );
 
   document.body.append(userDetails);
-});
+};
+
+init();

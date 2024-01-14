@@ -6,6 +6,9 @@
 import userService from "./user-service.js";
 import { renderUsers } from "./ui-render.js";
 
-userService.getUsers().then((users) => {
+const init = async () => {
+  const users = await userService.getUsers();
   document.body.append(renderUsers(users));
-});
+};
+
+init();
